@@ -9,7 +9,7 @@ import java.util.Currency;
 import java.util.Map;
 import java.util.Set;
 
-public class ProductDaoImpl implements ProductRepositoryCustom {
+public class ProductRepositoryImpl implements ProductRepositoryCustom {
 
     @Autowired
     private ProductDao productDao;
