@@ -27,7 +27,7 @@ public class Product {
     @CollectionTable(name = "product_tags", joinColumns = @JoinColumn(name= "id"))
     private Set<String> tags = new HashSet<>();
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<ProductPrice> prices = new HashSet<>();
 
     public long getId() {

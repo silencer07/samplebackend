@@ -16,10 +16,6 @@ public class ProductPrice {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
 
-    @ManyToOne
-    @NotNull
-    private Product product;
-
     @Column
     @NotBlank
     private String currency = "USD";
@@ -35,14 +31,6 @@ public class ProductPrice {
 
     public void setId(final long id) {
         this.id = id;
-    }
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(@Nonnull final Product product) {
-        this.product = product;
     }
 
     public BigDecimal getPrice() {
@@ -70,7 +58,6 @@ public class ProductPrice {
         final ProductPrice that = (ProductPrice) o;
 
         return new org.apache.commons.lang3.builder.EqualsBuilder()
-                .append(product, that.product)
                 .append(currency, that.currency)
                 .append(price, that.price)
                 .isEquals();
@@ -79,7 +66,6 @@ public class ProductPrice {
     @Override
     public int hashCode() {
         return new org.apache.commons.lang3.builder.HashCodeBuilder(17, 37)
-                .append(product)
                 .append(currency)
                 .toHashCode();
     }

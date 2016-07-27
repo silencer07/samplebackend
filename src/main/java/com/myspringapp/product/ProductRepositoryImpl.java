@@ -24,7 +24,6 @@ public class ProductRepositoryImpl implements ProductRepositoryCustom {
                 ProductPrice productPrice = new ProductPrice();
                 productPrice.setCurrency(Currency.getInstance(price.getKey()));
                 productPrice.setPrice(price.getValue());
-                productPrice.setProduct(product);
 
                 existingPrices.add(productPrice);
             }
